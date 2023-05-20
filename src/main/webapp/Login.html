@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login page</title>
+ <link rel="stylesheet" type="text/css" href="css.css">
+</head>
+
+<body>
+<div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">v18p7</h2>
+
+            </div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Service</a></li>
+                        <li><a href="">Design</a></li>
+                        <li><a href="">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="search">
+                    <input class="srch" type="search" name="" placeholder="Type to Text">
+                    <a href="#"><button class="btn">search</button></a>
+                </div>
+        </div>
+        <div class="content">
+            <h1>Web Design & <br> <span>Development</span> <br> Course</h1>
+            <p class="par">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae aliquid <br> molestias quam similique rerum earum ea iste, voluptatum nulla laborum minima <br> aperiam expedita alias distinctio eum dolor! Nihil, veritatis adipisci.
+            </p>
+
+            <button class="cn"><a href="#">Join Us</a></button>
+            <div class="form">
+                <h2>Login Here</h2>
+                <form action="verify" method="post">
+                    <div class="mts">
+                    <input type="radio" id="mng" name="role" value="Management"> <label for="mng">Management</label>
+                    <br>
+                    <input type="radio" id="tech" name="role" value="Teacher"> <label for="tech">Teachers</label>
+                    <br>
+                    <input type="radio" id="stud" name="role" value="Student"> <label for="stud">Students</label>
+                    <br>
+                    <br>
+                </div>
+                    <div class="email">
+                    <input type="email" id="em" name="email" placeholder="Enter a Email" required><br><br>
+                    
+                    <input type="password" id="pass" name="password" placeholder="Enter a Password" required onload="verifyPassword()">
+                </div>
+                    <input class="btnn" type="submit" onclick="email()" >
+                   
+                    <p class="link"> Don't have an Account<br>
+                    <a href="#">Sign up </a> here</p>
+                    <p class="liw">Log in with</p>
+                
+                    <div class="icons">
+                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-linkedin"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-regular fa-envelope"></i>
+                       
+                    </div>
+                
+                    </form>
+                    
+                   </div>
+                   
+            </div>
+        </div>
+    
+   <script>
+     
+        function email(){
+            var email1=document.getElementById("em").value;
+            var count=0;
+            for(var i=0;i<=email1.length;i++)
+            {
+                if(email1.includes("@gmail.com")&&email1.endsWith('m')&&(email1.charAt(0)>='a'&&email1.charAt(0)<='z'))
+                {
+               
+                count++;
+               }
+              
+            }
+            if(count>0)
+            {
+                return true;
+            }
+            else {
+               return false
+               }
+        }
+        
+    
+   
+  
+   function verifyPassword() {  
+	   var pw = document.getElementById("pass").value;  
+	    
+	   if(pw == "") {  
+	      document.getElementById("message").innerHTML = "**Fill the password!";  
+	      return false;  
+	   }       
+	   if(pw.length < 8) {  
+	      document.getElementById("message").innerHTML = "** length must be atleast 8 characters";  
+	      return false;  
+	   }     
+	   if(pw.length > 15) {  
+	      document.getElementById("message").innerHTML = "** length must not exceed 15 characters";  
+	      return false;  
+	   } else {  
+	      alert("Password is correct");  
+	   }  
+	 }  
+   </script>
+</body>
+</html>
